@@ -41,7 +41,7 @@ python -m unittest tests/test_view.py
 
 ## How to Use
 
-Once the app is running, you can use the following commands:
+Once the app is running, you can use the following commands(Both lower and upper case works same):
 
 | Command               | Description                                                     |
 |-----------------------|-----------------------------------------------------------------|
