@@ -12,19 +12,23 @@ class View:
         print(message) 
     
     @staticmethod
-    def display_message_by_type(msg_type: list[str] | bool | str):
-        if isinstance(msg_type, list):
-            if not msg_type:
+    def display_message_by_type(message: list[str] | bool | str):
+        if isinstance(message, list):
+            is_no_content = True
+            for item in message:
+                if str(item.strip()):
+                    is_no_content = False
+            if is_no_content:
                 print("No items found.")
                 return
-            for idx, item in enumerate(msg_type, start=1):
+            for idx, item in enumerate(message, start=1):
                 item = str(item.strip())
                 if not item:
                     continue
                 print(f"{idx}) {item}")
-        elif isinstance(msg_type, bool):
-            print(str(msg_type).lower())
-        elif isinstance(msg_type, str):
-            print(msg_type)
+        elif isinstance(message, bool):
+            print(str(message).lower())
+        elif isinstance(message, str):
+            print(message)
         else:
-            raise TypeError(f"Invalid type for message: {type(msg_type)}")
+            raise TypeError(f"Invalid type for message: {type(message)}")
