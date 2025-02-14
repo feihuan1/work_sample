@@ -122,7 +122,7 @@ class Controller:
             return
         
         self.view.display_message("\n\nExiting application. Goodbye!")
-        raise SystemExit
+        sys.exit(0)
 
     def run(self):
         try:
