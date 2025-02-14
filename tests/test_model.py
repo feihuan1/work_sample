@@ -1,11 +1,11 @@
 import unittest
 import os
-from model import MultiValueDictionary
+from model import Model
 
 class TestMultiValueDictionary(unittest.TestCase):
 
     def setUp(self):
-        self.mvd = MultiValueDictionary("test_data.txt")
+        self.mvd = Model("test_data.txt")
         if os.path.exists("test_data.txt"):
             os.remove("test_data.txt")
 
