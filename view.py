@@ -5,6 +5,10 @@ class View:
 
     @staticmethod
     def display_message(message: str):
+        message = str(message)
+        if not message:
+            print("No message availiable")
+            return
         print(message) 
     
     @staticmethod
@@ -14,6 +18,9 @@ class View:
                 print("No items found.")
                 return
             for idx, item in enumerate(msg_type, start=1):
+                item = str(item.strip())
+                if not item:
+                    continue
                 print(f"{idx}) {item}")
         elif isinstance(msg_type, bool):
             print(str(msg_type).lower())
